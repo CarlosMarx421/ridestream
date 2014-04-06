@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Directions API</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://joshdcompton.com/google_maps/js/jquery-1-4-4-min.js"> </script>
+<script type="text/javascript" src="http://joshdcompton.com/google_maps/js/jquery-ui-1-8-9.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="js/workflow.js"> </script>
+</head>
+<body onload="initialize()"> 
+
+<div id="control_panel">
+
+	<h1>Bike Directions to the C &amp; W Converefnce in Ann Arbor</h1>
+	
+    <div id="notes">
+    	<h3>Notes</h3>
+        <p>This is version 5.1 (per my internal sequencing), <!-- this is the index for previous versions --> </p> 
+        <p class="important"><del>This has not been tested on a PC</del>…Firefox, Chrome, Safari and Opera for Mac are all happy though :D</p>
+        <p>Any feedback, job offers or questions, mention @<a href="http://twitter.com/JoshDComp" title="you might as well follow me while you're there…I'm a pretty awesome Tweeter">joshDcomp</a> on Twitter to get ahold of me</p>
+    <!-- End Notes -->    
+    </div>
+    
+
+
+    <div id="form_contain">
+        
+        <form name="direction_input" id="direction_input">
+            <div id="start" class="on">
+                <h3>Where do you want to start from?</h3>
+                	<input type="text" id="start_txt" onfocus="autocomplete_start();" />
+                	<input type="button" id="start_button" value="Go" class="button" onclick="start_click()" />
+                
+            <!-- end start -->
+            </div>
+            
+            <div id="waypoint_contain" class="off">
+            
+            <h3>Add some pitt stops</h3>
+            
+                <input type="text" id="add_waypoint" onfocus="autocomplete_waypoint();" />
+                <input type="button" id="add_button" value="Add a rest stop" class="button" onClick="addWaypoint()" />               
+                <p class="form_label">Your waypoints:</p>
+                <select multiple id="waypoints"	>            	
+                </select>
+                <p class="form_label">Places where other people are stopping:</p>
+                <p class="sub_label">You need to be registered in our system and logged in to send a meetup request</p>
+                <select multiple id="waypoints" disabled="disabled" title="You need to be registered in our system and logged in to send a meetup request">
+                    <option value="Bloated Goat Saloon, East Grand River Avenue, Fowlerville, MI" title="You need to be registered in our system and logged in to send a meetup request">@grabill, @billh-d &amp; others will be at the Bloated Goat at 12:05pm</option>
+                    <option value="brighton, mi" title="You need to be registered in our system and logged in to send a meetup request">@joshdcomp will be in Brighton, MI at 2:00pm</option>
+                </select>
+                
+                <input type="button" id="update_button" class="button" value="Update Route" title="Add your waypoints" onclick="updateRoute();" />
+            
+            <!-- End waypoints -->
+            </div>
+        
+            <input type="button" name="final" id="final_submit" value="Save Progress" disabled="disabled" title="You will need to be signed in or set up an account to save your changes" onclick="savechanges();" />
+        
+        <!-- end direction input -->
+        </form>
+      <!-- end form_contain -->
+      </div>
+      
+	<div id="directions_panel" class="off"></div>  
+    <div id="directions_detail"></div>
+   	<div id="directions_response"></div>
+      
+<!-- End Control Panel -->    
+</div>
+<div id="map_canvas"> </div>
+
+
+</body>
+</html>

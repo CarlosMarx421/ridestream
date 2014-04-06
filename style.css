@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html { height: 100% 
+
+}
+
+body { 
+	height: 100%; 
+	margin: 0px; 
+	padding: 0px;
+	font-family: Helvetica, sans-serif;
+}
+
+body h1{
+	font-size: 18pt;
+	margin-bottom: 2px;
+}
+body h2{
+	font-size: 15pt;
+	margin-bottom: 2px;
+}
+body h3{
+	font-size: 12pt;
+	margin-bottom:2px;
+}
+
+#db_status h1{ font-size:small;}
+
+
+/*======== Map Elements
+================================================= */
+#map_canvas{
+	float:left;
+	margin: 1% 1% 1%;
+	width: 67%;
+	height:97%;
+	/* border: solid thin black; */
+}
+
+div.marker_info_box img{
+	 float: left;
+}
+
+.content{
+	margin: auto; 
+	text-align: right; 
+	
+}
+
+#control_panel{
+	float:right;
+	width: 25%;
+	text-align:left;
+	padding: 1% 6% 1% 0;
+	/* border: solid thin black; */
+}
+
+div.playing{ width:700px; margin: 50px; display: block; }
+.playing label{
+	display: block;
+	margin: 1% 2%;
+}
+
+
+/*======== Form stuff
+================================================= */
+#form_contain{
+	margin:10px 0 10px;
+	/*border: solid thin black; */
+}
+
+#form_contain label{
+	display: block;
+	margin: 1% 2%;
+}
+
+#form_contain select{
+	display: block;
+	margin: 1% 2%;
+}
+
+#form_contain option:nth-child(odd) { border-bottom: solid 1px #ccc;}
+
+/*#form_contain option:nth-child(even){ background-color: #f7f7f7;}*/
+
+div#form_inner_contain{
+	/* border: solid thin #999; */ 
+	padding: 10px 5px 10px 20px;
+}
+
+.button{ display: inline; height: 22pt; min-width: 50px; padding: 1px 5px; margin: 5px 0;}
+
+input#final_submit{ margin: 10px 0 0; display: block; width: 90px; height: 60px; font-size: big;}
+
+
+#notes{
+	margin: 10px 0 20px;
+	display: block;
+}
+#notes p{ font-size: small; color: #999; margin: 5px 0;}
+p.important { color:#000 !important; background-color: #FFC; font-weight: bold; padding: 10px;}
+#notes { margin: 1% 0;}
+
+.sub_label{
+	display: block;
+	margin: 5px;
+	font-size: small;
+	font-style: italic;
+	color: #999;
+}
+
+#directions_panel{
+	margin:2% 0 2%;
+	padding: 1%;
+	background-color: #eeffff;
+	color: #333;
+}
+
+
+#directions_detail{
+	overflow: auto;
+	margin: 1%;
+	height: 545px;
+	
+}
+
+#directions_response{ clear: both; font-size: smaller; overflow: scroll;}
+
+#waypoints{ width: 90%; overflow: auto;}
+
+#waypoint_contain{ margin: auto 0 auto 20px; padding: 10px; border-left: solid thin #CCC;}
+
+p.form_label{ margin-bottom:0; font-size: small; font-weight: bold;} 
+
+/* CSS properties to turn things on and off with JavaScript…I've recently discovered that display: none; actually causes an object to  */
+.on{}
+.off{ display: none;}
+
+.ui-autocomplete {
+    background-color: white;
+    height: auto;
+	width: 250px;
+    border: 1px solid #cfcfcf;
+    list-style-type: none;
+	display:inline-block;
+    padding-left: 0px;
+	clear:none;
+	z-index:0;	
+}
+
+.ui-autocomplete li:hover{background-color: #cff;}
+
+
+
+
+
